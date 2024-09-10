@@ -1,0 +1,19 @@
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  background: rgba(58, 114, 197, 0.85) !important;
+  border-radius: 10px;
+  max-width: 100%;
+  //   margin: 0 auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0.5;
+  object-fit: cover;
+}
