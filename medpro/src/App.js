@@ -5,6 +5,9 @@ import NavBar from "./NavBar/NavBar";
 import Home from "./Home/Home";
 import AboutUs from "./AboutUs/AboutUs";
 import ContactUs from "./ContactUs/ContactUs";
+import Service from "./Services/Service";
+import Blog from "./Blogs/Blog";
+import Query from "./Query/Query";
 
 function App() {
   return (
@@ -14,7 +17,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/query" element={<Query />} />
         </Routes>
       </div>
     </Router>

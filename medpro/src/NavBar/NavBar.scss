@@ -21,6 +21,7 @@ $mobile-breakpoint: 768px;
   box-sizing: border-box; // Ensure padding does not affect total width
 
   .logo {
+    padding-top: 10px;
     color: $text-color;
     font-size: 22px;
     font-weight: bold;
