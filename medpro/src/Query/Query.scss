@@ -1,0 +1,136 @@
+$query-bg: #f9f9f9;
+$form-bg: #e6f7ff;
+$input-bg: #ffffff;
+$button-bg: #007bff;
+$button-hover-bg: #0056b3;
+$border-color: #d1d1d1;
+$question-bg: #e2f0ff;
+$answer-bg: #ffffff;
+$card-bg: #ffffff;
+
+.queryContainer {
+  //   max-width: 1200px; /* Adjusted max width for a wider container */
+
+  margin: 80px auto;
+  padding: 20px;
+  //   background-color: $query-bg;
+  //   border-radius: 10px;
+  //   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.questionForm {
+  display: flex;
+  margin-bottom: 20px;
+
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: $input-bg;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: $button-bg;
+    }
+  }
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: $button-bg;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $button-hover-bg;
+    }
+  }
+}
+
+.qaList {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Explicitly set to 4 cards per row */
+  gap: 15px; /* Space between cards */
+
+  .qaCard {
+    background-color: $card-bg;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+    justify-content: space-between; /* Space out content and button */
+
+    &:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .question {
+      background-color: $question-bg;
+      padding: 10px;
+      border-radius: 5px;
+
+      h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #364b62;
+      }
+    }
+
+    .answer {
+      background-color: $answer-bg;
+      padding: 10px;
+      margin-top: 10px;
+      border-top: 1px solid $border-color;
+
+      p {
+        margin: 0;
+        color: #555;
+      }
+    }
+
+    .readMore {
+      margin-top: auto; /* Push the button to the bottom */
+      padding: 10px 15px;
+      border: 1px solid $button-bg;
+      border-radius: 5px;
+      //   background-color: $button-bg;
+      color: $button-bg;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+      font-size: 14px;
+      text-align: center; /* Center text in button */
+      font-weight: bold; /* Make the text bold */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+
+      &:hover {
+        background-color: $button-hover-bg;
+        color: white;
+        transform: translateY(-2px); /* Raise the button on hover */
+      }
+
+      &:active {
+        transform: translateY(0); /* Reset when active */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+      }
+    }
+  }
+}

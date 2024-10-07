@@ -57,13 +57,7 @@ const doctors = [
 function AboutUs() {
   return (
     <>
-      {/* <div>About Us Page</div> */}
-      {/* <h6>
-        Here's a powerful line to describe doctors: "Guardians of health,
-        doctors blend science with compassion, dedicating their lives to healing
-        and saving others."
-      </h6> */}
-      <div className="container mt-5">
+      <div className="aboutusContainer">
         <Row>
           {doctors.map((doctor, index) => (
             <Col md="4" sm="6" className="mb-4" key={index}>

@@ -1,7 +1,10 @@
+import "./Service.scss";
 const Service = () => {
   return (
     <>
-      <h6>Services</h6>
+      <div className="servicesContainer">
+        <h6>Services</h6>
+      </div>
     </>
   );
 };

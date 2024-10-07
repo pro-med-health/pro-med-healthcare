@@ -1,0 +1,68 @@
+.blogsContainer {
+  padding-top: 80px;
+  display: flex;
+  flex-wrap: wrap; // Allow cards to wrap to the next line
+  justify-content: space-between; // Space cards evenly
+  gap: 20px; // Space between cards
+  background-color: #f8f9fa; // Light background for contrast
+  max-width: 1200px; // Limit the width for better readability
+  margin: 0 auto; // Center the container
+}
+
+.blogCard {
+  background-color: #ffffff; // White background for the card
+  border: 1px solid #dee2e6; // Light border
+  border-radius: 12px; // More pronounced rounded corners
+  padding: 20px; // Increased padding for a better layout
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Deeper shadow for better depth
+  transition: transform 0.2s, box-shadow 0.2s; // Smooth hover effect
+  flex: 1 1 calc(33.333% - 20px); // Set each card to take up 1/3 of the row, accounting for the gap
+  position: relative; // Needed for positioning the button
+
+  &:hover {
+    transform: translateY(-4px); // Slight lift on hover
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Enhanced shadow on hover
+    cursor : pointer
+  }
+}
+
+.blogTitle {
+  font-size: 1.2rem; // Increased font size for title
+  font-weight: bold; // Make the title bold
+  color: #343a40; // Dark color for title
+  margin: 0 0 10px; // Space below the title
+}
+
+.blogAuthor,
+.blogDate {
+  font-size: 0.95rem; // Adjusted font size for author and date
+  color: #6c757d; // Gray color for secondary text
+  margin: 2px 0; // Adjusted space between author and date
+}
+
+.blogAuthor {
+  font-style: italic; // Italicize the author's name for differentiation
+}
+
+.blogDate {
+  opacity: 0.7; // Make the date slightly less prominent
+}
+
+.readMoreButton {
+  position: absolute; // Positioning the button at the bottom right
+  bottom: 15px; // Distance from the bottom of the card
+  right: 15px; // Distance from the right of the card
+  padding: 8px 15px; // Padding for the button
+  font-size: 0.9rem; // Font size for the button
+  color: #007bff; // Text color for the button (primary color)
+  background-color: transparent; // Make background transparent
+  border: 1px solid #007bff; // Add border with the same color as the text
+  border-radius: 5px; // Rounded corners for the button
+  cursor: pointer; // Pointer cursor on hover
+  transition: background-color 0.3s, color 0.3s; // Smooth color transition
+
+  &:hover {
+    background-color: #007bff; // Background color on hover
+    color: #ffffff; // Change text color on hover
+  }
+}

@@ -1,92 +1,68 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./NavBar.scss"; // Ensure you have SCSS for styles
-import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from "reactstrap";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Navbar, NavbarBrand } from "reactstrap";
+import "./NavBar.scss";
 
 function NavBar() {
-  return (
-    <>
-      <nav className="navbar">
-        <h1 className="logo">
-          MEDPRO
-          <img
-            alt="logo"
-            src="/Logo.png"
-            style={{
-              height: 30,
-              width: 40,
-              paddingLeft: 10,
-              paddingTop: 0,
-            }}
-          ></img>
-        </h1>
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blogs</Link>
-          </li>
-          <li>
-            <Link to="/query">Q&A</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/service">Services</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
-          </li>
-        </ul>
-      </nav>
+  const [isOpen, setIsOpen] = useState(false);
 
-      {/* <Navbar className="my-2" color="white">
-        <NavbarBrand href="/">
-          <img
-            alt="logo"
-            src="/Logo.png"
-            style={{
-              height: 40,
-              width: 40,
-            }}
-          />
-        </NavbarBrand>
-        <h1 className="logo">MEDPRO</h1>
-        <Nav className="me-auto" navbar>
-          <NavItem>
-            <NavLink href="/components/">Components</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar> */}
-      {/* <Navbar
-    className="my-2"
-    color="secondary"
-    dark
-  >
-    <NavbarBrand href="/">
-      Reactstrap
-    </NavbarBrand>
-  </Navbar>
-  <Navbar
-    className="my-2"
-    color="dark"
-    dark
-  >
-    <NavbarBrand href="/">
-      <img
-        alt="logo"
-        src="/logo-white.svg"
-        style={{
-          height: 40,
-          width: 40
-        }}
-      />
-      Reactstrap
-    </NavbarBrand>
-  </Navbar> */}
-    </>
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <Navbar className="navbar">
+      <NavbarBrand className="logo">
+        Dr.Healthiness
+        <img
+          alt="logo"
+          src="/Logo.png"
+          style={{ height: 30, width: 40, paddingLeft: 10, paddingTop: 0 }}
+        />
+      </NavbarBrand>
+      <button className="burger-menu" onClick={toggleNavbar}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/blog" activeClassName="active">
+            Blogs
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/query" activeClassName="active">
+            Q&A
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active">
+            About Us
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/service" activeClassName="active">
+            Services
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">
+            Contact Us
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" activeClassName="active">
+            Login
+          </NavLink>
+        </li>
+      </ul>
+    </Navbar>
   );
 }
 

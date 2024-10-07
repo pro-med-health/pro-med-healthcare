@@ -8,7 +8,8 @@ import ContactUs from "./ContactUs/ContactUs";
 import Service from "./Services/Service";
 import Blog from "./Blogs/Blog";
 import Query from "./Query/Query";
-
+import Login from "./Login/Login";
+import Register from "./Registration/Register";
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/service" element={<Service />} />
           <Route path="/contact" element={<ContactUs />} />

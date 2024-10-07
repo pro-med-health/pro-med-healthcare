@@ -1,0 +1,210 @@
+// Variables
+$primary-color: #0f2027;
+$secondary-color: #2c5364;
+$text-color: #fff;
+$accent-color: #f4b41a;
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  padding: 1rem;
+  padding-top: 80px;
+
+  .left-section {
+    flex: 1; // Take up remaining space
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $text-color;
+    padding: 0.5rem;
+    text-align: center;
+
+    .doctor-image {
+      width: 70%; // Adjust size as needed
+      margin-right: 50px;
+      opacity: 0.7;
+      max-width: 900px; // Maximum width for larger screens
+      border-radius: 25px; // Rounded corners
+      margin-bottom: 2rem; // Spacing below the image
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Optional shadow for depth
+    }
+
+    .punchline {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, $accent-color, $secondary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: lighten(
+        $text-color,
+        0.7
+      ); // Lightened color for better readability
+    }
+  }
+
+  .login-form {
+    background-color: #fff;
+    padding: 7rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    margin-left: -20px; // Pull the form slightly left to connect with the image
+    border-top-left-radius: 0; // Remove top-left rounding for connection
+    border-bottom-left-radius: 0; // Remove bottom-left rounding for connection
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.9
+    ); // Subtle white with transparency
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: $primary-color;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        font-size: 1rem;
+        color: $primary-color;
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.85rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: $secondary-color;
+          background-color: #fff;
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(44, 83, 100, 0.15);
+        }
+      }
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 0.7rem;
+      background-color: $primary-color;
+      color: $text-color;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: lighten($primary-color, 10%);
+        }
+      }
+    }
+  }
+
+  // Responsive styles for smaller screens
+  @media screen and (max-width: 768px) {
+    .login-form {
+      padding: 2rem;
+      max-width: 350px;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .form-group input {
+        padding: 0.75rem;
+      }
+
+      .btn-login {
+        padding: 0.75rem;
+      }
+    }
+
+    .left-section {
+      padding: 1rem;
+
+      .doctor-image {
+        width: 100%; // Full width on smaller screens
+        max-width: none; // Remove max width
+      }
+
+      .punchline {
+        font-size: 1.5rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .login-form {
+      padding: 1.5rem;
+      max-width: 300px;
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .form-group input {
+        padding: 0.7rem;
+      }
+
+      .btn-login {
+        padding: 0.7rem;
+      }
+    }
+  }
+  .login-container .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .login-container .links a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .login-container .links a:hover {
+    text-decoration: underline;
+  }
+}

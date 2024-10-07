@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "./Home.scss"; // Create this CSS file for additional styling
 import { UncontrolledCarousel } from "reactstrap";
+import { useNavigate } from "react-router-dom"; // useNavigate replaces useHistory
 
 // Sample images
 const images = [
@@ -10,8 +11,10 @@ const images = [
   "https://medtourpress.ir/en/wp-content/uploads/2020/08/indian-doctor.jpg",
 ];
 
-function Home() {
+const Home = (props) => {
   // Carousel settings
+  const navigate = useNavigate(); // useNavigate for navigation
+
   const settings = {
     dots: true,
     infinite: true,
@@ -21,6 +24,14 @@ function Home() {
     autoplay: true,
     autoplaySpeed: 3000,
   };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // if (!isLoggedIn) {
+    //   navigate("/login"); // navigate to login if not logged in
+    // }
+  }, []);
 
   return (
     <div className="home-container">
@@ -50,6 +61,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;
