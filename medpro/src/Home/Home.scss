@@ -1,20 +1,37 @@
+$primary-color: #0f2027;
+$secondary-color: #2c5364;
+$text-color: #fff;
+$accent-color: #f4b41a;
+
 .home-container {
   text-align: center;
-  padding: 20px;
-  margin-top: 80px;
+  // padding: 20px;
+  padding-top: 80px;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
 }
 
 .carousel-container {
-  background: rgba(58, 114, 197, 0.85) !important;
+  // background: rgba(58, 114, 197, 0.85) !important;
   border-radius: 10px;
   max-width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
+  .carousel-item img {
+    // border-radius: 12px; // Adjust the border-radius as needed
+    width: 100%;
+    height: auto;
+    object-fit: cover; // Ensures images cover the container without distortion
+  }
 }
 
-.carousel-slide img {
-  width: 80%;
-  height: auto;
-  border-radius: 8px;
-  opacity: 0.5;
-  object-fit: cover;
+@media (max-width: 768px) {
+  .home-container {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-container {
+    height: 250px;
+  }
 }

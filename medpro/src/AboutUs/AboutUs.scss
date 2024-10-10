@@ -1,7 +1,20 @@
+$primary-color: #0f2027;
+$secondary-color: #2c5364;
+$text-color: #fff;
+$accent-color: #f4b41a;
+.aboutusBody {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
 .aboutusContainer {
-  margin-top: 80px;
+  padding-top: 80px;
   margin-right: 50px;
   margin-left: 50px;
+}
+
+@media screen and (max-width: 576px) {
+  .aboutusContainer {
+    padding-top: 100px;
+  }
 }
 
 .doctor-card {

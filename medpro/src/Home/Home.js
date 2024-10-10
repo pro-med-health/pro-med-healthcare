@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "./Home.scss"; // Create this CSS file for additional styling
 import { UncontrolledCarousel } from "reactstrap";
 import { useNavigate } from "react-router-dom"; // useNavigate replaces useHistory
+import Footer from "../Footer/Footer";
 
 // Sample images
 const images = [
@@ -59,6 +60,8 @@ const Home = (props) => {
           ]}
         />
       </div>
+
+      <Footer />
     </div>
   );
 };

@@ -10,6 +10,8 @@ import Blog from "./Blogs/Blog";
 import Query from "./Query/Query";
 import Login from "./Login/Login";
 import Register from "./Registration/Register";
+import "font-awesome/css/font-awesome.min.css";
+
 function App() {
   return (
     <Router>

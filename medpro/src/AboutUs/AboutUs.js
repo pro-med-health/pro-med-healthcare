@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardText, Row, Col } from "reactstrap";
 import "./AboutUs.scss"; // Add this for custom styles
+import Footer from "../Footer/Footer";
 const doctors = [
   {
     name: "Dr. Sarah Johnson",
@@ -57,26 +58,29 @@ const doctors = [
 function AboutUs() {
   return (
     <>
-      <div className="aboutusContainer">
-        <Row>
-          {doctors.map((doctor, index) => (
-            <Col md="4" sm="6" className="mb-4" key={index}>
-              <Card className="doctor-card">
-                <div className="card-img-wrapper">
-                  <img
-                    src={doctor.img}
-                    alt={doctor.name}
-                    className="doctor-img"
-                  />
-                </div>
-                <CardBody>
-                  <CardTitle tag="h5">{doctor.name}</CardTitle>
-                  <CardText>{doctor.info}</CardText>
-                </CardBody>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+      <div className="aboutusBody">
+        <div className="aboutusContainer">
+          <Row>
+            {doctors.map((doctor, index) => (
+              <Col md="4" sm="6" className="mb-4" key={index}>
+                <Card className="doctor-card">
+                  <div className="card-img-wrapper">
+                    <img
+                      src={doctor.img}
+                      alt={doctor.name}
+                      className="doctor-img"
+                    />
+                  </div>
+                  <CardBody>
+                    <CardTitle tag="h5">{doctor.name}</CardTitle>
+                    <CardText>{doctor.info}</CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
+        <Footer />
       </div>
     </>
   );

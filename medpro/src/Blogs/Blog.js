@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import "./Blog.scss";
 
 const Blog = () => {
@@ -35,7 +36,7 @@ const Blog = () => {
     },
     {
       id: 6,
-      title: "Building Responsive Medical Websites",
+      title: "Building Responsive Medical Websites and designing it",
       author: "Chris Green",
       date: "2024-09-05",
     },
@@ -92,22 +93,24 @@ const Blog = () => {
       title: "Mental Health and Digital Therapeutics",
       author: "Lucas Mitchell",
       date: "2024-07-25",
-    }
+    },
   ];
-
 
   return (
     <>
-      <div className="blogsContainer">
-        {blogs.map((blog) => (
-          <div key={blog.id} className="blogCard">
-            <h3 className="blogTitle">{blog.title}</h3>
-            <p className="blogAuthor">Posted by: {blog.author}</p>
-            <p className="blogDate">Date: {blog.date}</p>
-            <button className="readMoreButton">Read More</button>{" "}
-            {/* Read More button */}
-          </div>
-        ))}
+      <div className="blogsBody">
+        <div className="blogsContainer">
+          {blogs.map((blog) => (
+            <div key={blog.id} className="blogCard">
+              <h3 className="blogTitle">{blog.title}</h3>
+              <p className="blogAuthor">Posted by: {blog.author}</p>
+              <p className="blogDate">Date: {blog.date}</p>
+              <button className="readMoreButton">Read More</button>{" "}
+              {/* Read More button */}
+            </div>
+          ))}
+        </div>
+        <Footer />
       </div>
     </>
   );

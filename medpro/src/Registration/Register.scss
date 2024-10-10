@@ -6,6 +6,7 @@ $accent-color: #f4b41a;
 
 .register-container {
   display: flex;
+  flex-direction: row; // Default for larger screens
   min-height: 100vh;
   background: linear-gradient(135deg, $primary-color, $secondary-color);
   padding: 1rem;
@@ -18,13 +19,11 @@ $accent-color: #f4b41a;
     justify-content: center;
     align-items: center;
     color: $text-color;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
 
     .doctor-image {
       width: 70%;
-      margin-right: 50px;
-      opacity: 0.7;
       max-width: 900px;
       border-radius: 25px;
       margin-bottom: 2rem;
@@ -48,144 +47,81 @@ $accent-color: #f4b41a;
   }
 
   .register-form-section {
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.9
-    ); // Subtle white with transparency
-    padding: 4rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 400px;
-    margin-left: -20px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    backdrop-filter: blur(10px); // Optional: adds a nice glass effect
+    max-width: 450px;
+    // margin-left: 1rem;
+    //backdrop-filter: blur(10px);
 
     h2 {
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: $primary-color;
-    }
-
-    .form-group {
       margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-
-      label {
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-        font-size: 1rem;
-        color: $primary-color;
-        text-align: left;
-      }
-
-      input,
-      select,
-      textarea {
-        width: 100%;
-        padding: 0.85rem;
-        border: 1px solid #ddd;
-        border-radius: 15px; // Rounded corners for inputs
-        font-size: 1rem;
-        background-color: #f1f1f1; // Softer background for inputs
-        transition: all 0.3s ease;
-
-        &:focus {
-          border-color: $secondary-color;
-          background-color: #fff;
-          outline: none;
-          box-shadow: 0 0 0 4px rgba(44, 83, 100, 0.15);
-        }
-      }
+      font-size: 1.8rem;
+      color: $primary-color;
     }
 
     .btn-register {
       width: 100%;
-      padding: 0.7rem;
+      padding: 0.75rem;
       background-color: $primary-color;
       color: $text-color;
       border: none;
-      border-radius: 8px; // Rounded corners for the button
+      border-radius: 8px;
       font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: lighten($primary-color, 10%);
       }
     }
-
     .links {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-
-      a {
-        color: $primary-color;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: lighten($primary-color, 10%);
-        }
-      }
+      margin-top: 20px;
     }
   }
 
-  // For smaller screens
-  @media screen and (max-width: 768px) {
-    .register-form-section {
-      padding: 2rem;
-      max-width: 350px;
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .form-group input,
-      select,
-      textarea {
-        padding: 0.75rem;
-      }
-
-      .btn-register {
-        padding: 0.75rem;
-      }
-    }
-  }
-
-  // Responsive styles for smaller screens
-  @media screen and (max-width: 768px) {
-    .register-form-section {
-      padding: 2rem;
-      max-width: 350px;
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .form-group input,
-      .form-group select {
-        padding: 0.75rem;
-      }
-
-      .btn-register {
-        padding: 0.75rem;
-      }
-    }
+  // Responsive design for tablet and mobile
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
 
     .left-section {
       padding: 1rem;
+      .doctor-image {
+        width: 70%;
+        // max-width: 300px;
+      }
 
+      .punchline {
+        font-size: 1.6rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+
+    .register-form-section {
+      width: 100%;
+      margin-top: 1.5rem;
+      max-width: 100%;
+      // padding: 1.5rem;
+
+      .btn-register {
+        padding: 0.75rem;
+      }
+    }
+  }
+
+  // Extra small screens (phones)
+  @media (max-width: 576px) {
+    .left-section {
       .doctor-image {
         width: 100%;
-        max-width: none;
+        margin-bottom: 1rem;
       }
 
       .punchline {
@@ -196,54 +132,13 @@ $accent-color: #f4b41a;
         font-size: 1rem;
       }
     }
-  }
 
-  @media screen and (max-width: 576px) {
     .register-form-section {
-      padding: 1.5rem;
-      max-width: 300px;
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      .form-group input,
-      .form-group select {
-        padding: 0.7rem;
-      }
+      // padding: 1rem;
+      max-width: 90%;
 
       .btn-register {
-        padding: 0.7rem;
-      }
-    }
-  }
-
-  .register-container .links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-  }
-
-  .register-container .links a {
-    color: #007bff;
-    text-decoration: none;
-  }
-
-  .register-container .links a:hover {
-    text-decoration: underline;
-  }
-  .links {
-    margin-top: 1.5rem;
-    text-align: center;
-
-    .login-link {
-      color: $primary-color;
-      text-decoration: none;
-      font-weight: bold;
-
-      &:hover {
-        color: lighten($primary-color, 10%);
-        text-decoration: underline;
+        padding: 0.6rem;
       }
     }
   }

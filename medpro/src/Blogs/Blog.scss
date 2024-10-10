@@ -1,68 +1,105 @@
+$primary-color: #0f2027;
+$secondary-color: #2c5364;
+$text-color: #fff;
+$accent-color: #f4b41a;
+.blogsBody {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
 .blogsContainer {
   padding-top: 80px;
   display: flex;
-  flex-wrap: wrap; // Allow cards to wrap to the next line
-  justify-content: space-between; // Space cards evenly
-  gap: 20px; // Space between cards
-  background-color: #f8f9fa; // Light background for contrast
-  max-width: 1200px; // Limit the width for better readability
-  margin: 0 auto; // Center the container
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  // background-color: #f8f9fa;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  @media (max-width: 1024px) {
+    gap: 15px; // Slightly reduce the gap between cards on tablet
+    padding-top: 50px; // Adjust padding for tablet
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack cards vertically on mobile
+    padding: 10px; // Reduce padding on mobile
+    max-width: 100%; // Remove width restriction on mobile
+    margin-top: 80px;
+  }
 }
 
 .blogCard {
-  background-color: #ffffff; // White background for the card
-  border: 1px solid #dee2e6; // Light border
-  border-radius: 12px; // More pronounced rounded corners
-  padding: 20px; // Increased padding for a better layout
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Deeper shadow for better depth
-  transition: transform 0.2s, box-shadow 0.2s; // Smooth hover effect
-  flex: 1 1 calc(33.333% - 20px); // Set each card to take up 1/3 of the row, accounting for the gap
-  position: relative; // Needed for positioning the button
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex: 1 1 calc(33.333% - 20px);
+  position: relative;
 
   &:hover {
-    transform: translateY(-4px); // Slight lift on hover
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Enhanced shadow on hover
-    cursor : pointer
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    flex: 1 1 calc(50% - 15px); // Set card width to 50% on tablet
+  }
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%; // Full width for cards on mobile
+    padding: 15px; // Adjust padding for mobile
+    margin-bottom: 10px; // Add space between cards on mobile
   }
 }
 
 .blogTitle {
-  font-size: 1.2rem; // Increased font size for title
-  font-weight: bold; // Make the title bold
-  color: #343a40; // Dark color for title
-  margin: 0 0 10px; // Space below the title
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #343a40;
+  margin: 0 0 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem; // Slightly smaller title on mobile
+  }
 }
 
 .blogAuthor,
 .blogDate {
-  font-size: 0.95rem; // Adjusted font size for author and date
-  color: #6c757d; // Gray color for secondary text
-  margin: 2px 0; // Adjusted space between author and date
-}
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 2px 0;
 
-.blogAuthor {
-  font-style: italic; // Italicize the author's name for differentiation
-}
-
-.blogDate {
-  opacity: 0.7; // Make the date slightly less prominent
+  @media (max-width: 768px) {
+    font-size: 0.9rem; // Adjust font size on mobile
+  }
 }
 
 .readMoreButton {
-  position: absolute; // Positioning the button at the bottom right
-  bottom: 15px; // Distance from the bottom of the card
-  right: 15px; // Distance from the right of the card
-  padding: 8px 15px; // Padding for the button
-  font-size: 0.9rem; // Font size for the button
-  color: #007bff; // Text color for the button (primary color)
-  background-color: transparent; // Make background transparent
-  border: 1px solid #007bff; // Add border with the same color as the text
-  border-radius: 5px; // Rounded corners for the button
-  cursor: pointer; // Pointer cursor on hover
-  transition: background-color 0.3s, color 0.3s; // Smooth color transition
-
+  // position: absolute;
+  margin-top: 5px;
+  bottom: 3px;
+  right: 4px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: #007bff;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
   &:hover {
-    background-color: #007bff; // Background color on hover
-    color: #ffffff; // Change text color on hover
+    background-color: #007bff;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    position: static; // Position button normally on mobile
+    margin-top: 10px; // Add margin on mobile to separate from content
+    width: 100%; // Full-width button on mobile for better touch interaction
+    text-align: center; // Center the text on the button
   }
 }

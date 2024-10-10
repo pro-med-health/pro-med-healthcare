@@ -8,23 +8,41 @@ $question-bg: #e2f0ff;
 $answer-bg: #ffffff;
 $card-bg: #ffffff;
 
-.queryContainer {
-  //   max-width: 1200px; /* Adjusted max width for a wider container */
+$primary-color: #0f2027;
+$secondary-color: #2c5364;
+$text-color: #fff;
+$accent-color: #f4b41a;
 
-  margin: 80px auto;
-  padding: 20px;
-  //   background-color: $query-bg;
-  //   border-radius: 10px;
-  //   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.queryBody {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
+
+.queryContainer {
+  padding-top: 100px;
+  // padding: 20px;
   margin-left: 50px;
   margin-right: 50px;
+  padding-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 576px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
   font-size: 28px;
-  color: #333;
+  color: white;
+
+  @media (max-width: 576px) {
+    font-size: 22px;
+  }
 }
 
 .questionForm {
@@ -44,6 +62,11 @@ $card-bg: #ffffff;
       outline: none;
       border-color: $button-bg;
     }
+
+    @media (max-width: 576px) {
+      font-size: 14px;
+      margin-right: 5px;
+    }
   }
 
   button {
@@ -54,10 +77,14 @@ $card-bg: #ffffff;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 
     &:hover {
       background-color: $button-hover-bg;
+    }
+
+    @media (max-width: 576px) {
+      padding: 8px 12px;
+      font-size: 14px;
     }
   }
 }
@@ -65,8 +92,16 @@ $card-bg: #ffffff;
 .qaList {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Explicitly set to 4 cards per row */
-  gap: 15px; /* Space between cards */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+  gap: 15px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
 
   .qaCard {
     background-color: $card-bg;
@@ -74,10 +109,9 @@ $card-bg: #ffffff;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
     display: flex;
-    flex-direction: column; /* Ensure children stack vertically */
-    justify-content: space-between; /* Space out content and button */
+    flex-direction: column;
+    transition: box-shadow 0.3s;
 
     &:hover {
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -92,6 +126,10 @@ $card-bg: #ffffff;
         margin: 0;
         font-size: 18px;
         color: #364b62;
+
+        @media (max-width: 576px) {
+          font-size: 16px;
+        }
       }
     }
 
@@ -104,32 +142,38 @@ $card-bg: #ffffff;
       p {
         margin: 0;
         color: #555;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
       }
     }
 
     .readMore {
-      margin-top: auto; /* Push the button to the bottom */
+      margin-top: auto;
       padding: 10px 15px;
       border: 1px solid $button-bg;
       border-radius: 5px;
-      //   background-color: $button-bg;
       color: $button-bg;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+      transition: background-color 0.3s, transform 0.3s;
       font-size: 14px;
-      text-align: center; /* Center text in button */
-      font-weight: bold; /* Make the text bold */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+      text-align: center;
+      font-weight: bold;
 
       &:hover {
         background-color: $button-hover-bg;
         color: white;
-        transform: translateY(-2px); /* Raise the button on hover */
+        transform: translateY(-2px);
       }
 
       &:active {
-        transform: translateY(0); /* Reset when active */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+        transform: translateY(0);
+      }
+
+      @media (max-width: 576px) {
+        padding: 8px 12px;
+        font-size: 12px;
       }
     }
   }
